@@ -445,11 +445,6 @@ footer .rango {
 	}
 }
 
-@media screen  and  (min-width: 800px){
-	.carts { 
-		max-width: 250px;
-	}
-}
 
 
 @media screen  and  (min-width: 1200px){
@@ -475,7 +470,20 @@ footer .rango {
 	  right: 28%;
 	  }
   }
-  
+ 
+  @media screen  and  (max-width: 400px){
+.container .products .carts { 
+	width: 150px;
+	
+		}
+		.title {font-size: 12px;}
+	}
+
+@media screen  and  (max-width: 400px){
+	.container .products .carts a { font-size: 10px;}
+	}
+		
+
 
 @media screen  and  (max-width: 290px){
 	.redes-sociales a { 
@@ -835,7 +843,6 @@ footer .rango {
 .cart-products2 .item2 img{
     width: 115px;
 }
-
 
 .cart-products2 .item2{
 	display: flex;
