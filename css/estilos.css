@@ -471,7 +471,7 @@ footer .rango {
 	  }
   }
  
-  @media screen  and  (max-width: 400px){
+  @media screen  and  (max-width: 390px){
 .container .products .carts { 
 	width: 150px;
 	
@@ -479,7 +479,7 @@ footer .rango {
 		.title {font-size: 12px;}
 	}
 
-@media screen  and  (max-width: 400px){
+@media screen  and  (max-width: 390px){
 	.container .products .carts a { font-size: 10px;}
 	}
 		
