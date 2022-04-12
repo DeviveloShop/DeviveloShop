@@ -291,6 +291,52 @@ lottie-player {
 
 /* ----- ----- portafolios ----- ----- */
 
+.colores {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+
+	
+}
+
+.color1 {
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	margin: 5px 5px;
+	border: solid 1px #00000099;
+	
+	
+}
+
+.color2 {
+	width: 20px;
+	height: 20px;
+	background: #000000;
+	border-radius: 5px;
+	border: solid 1px #ffffff;
+}
+
+.color3 {
+	width: 20px;
+	height: 20px;
+	background: #5a3900;
+	border-radius: 5px;
+	margin: 5px 5px;
+	border: solid 1px #ffffff;
+}
+.color4 {
+	width: 20px;
+	height: 20px;
+	background: #f5e1ce;
+	border-radius: 5px;
+	border: solid 1px #00000099;
+	
+}
+
 .portafolio {
 	text-align: center;
 	display: none;
@@ -616,6 +662,7 @@ footer .rango {
   
   .imgLogo {
 	width: 15%;
+	display: none;
 
   }
   
@@ -632,8 +679,7 @@ footer .rango {
   .formulario__parrafo {
 	color: rgba(0, 0, 0, 0.5);
   }
-  .formulario__input,
-  .formulario__label {
+  .formulario__input,.formulario__label {
 	display: block;
 	width: 100%;
 	font-size: 1, 3em;
@@ -694,7 +740,9 @@ footer .rango {
 	color: green;
   }
 
-
+.formulario .envio {
+	font-size: 10px;
+}
     /* catalogos */
 
 
@@ -801,6 +849,8 @@ footer .rango {
     font-weight: 500;
     padding: 0 20px;
     margin-bottom: 24px;
+	font-size: 13px;
+	
 }
 .carts div p{
     position: absolute;
@@ -810,6 +860,7 @@ footer .rango {
     color: #fff;
     padding: 2px 7px 4px 21px;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+	
 }
 .carts div{
     position: relative;
