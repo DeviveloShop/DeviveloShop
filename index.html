@@ -30,6 +30,12 @@
 
 <a class="side3" href="https://devivelo.blogspot.com/p/opciones-de-pago.html">Pagos</a>
 
+<a class="side3" href="https://devivelo.blogspot.com/p/devivelo-shop-envios.html"><span class="fa fa-truck"></span >&nbsp;Envios</a>
+
+<a class="side3" href="https://devivelo.blogspot.com/p/devivelo-shop-delivery.html"><span class="fa fa-motorcycle"></span>&nbsp;Delivery</a>
+
+<a class="side3" href="https://devivelo.blogspot.com/p/devivelo-shop-cambios.html"><span class="fa fa-exchange"></span>&nbsp;Cambios</a>
+
 <a class="side3" href="https://cliconline.github.io/CliconlineStudios/networks.html">Network</a>
 
 <a href="https://play.google.com/store/apps/details?id=io.kodular.will_i_amw07_wp.Cliconline&hl=es">App</a>
@@ -49,7 +55,7 @@
 		
 			<img class="portada" src="img/b11-01.png" alt="">
 
-			<a href="https://api.whatsapp.com//send?text=Enviado%20desde%20la%20App%20de%20Cliconline%20Ver%20Tarjeta%20Digital%20aqui%20https://devivelo.blogspot.com/p/devivelo-shop.html" class="share" id="share" target="black" ><span class="material-icons">share</span></a>
+			<a href="https://api.whatsapp.com//send?text=Enviado%20desde%20la%20App%20de%20Cliconline%20Ver%20Tarjeta%20Digital%20aqui%20https://devivelo.blogspot.com" class="share" id="share" target="black" ><span class="material-icons">share</span></a>
 
 			<a href="https://drive.google.com/u/0/uc?id=1J6QHf4QbXvCWtJkpBX0e56cBhdq0yRSC&export=download" class="descarga" id="descarga" target="black" ><span class="material-icons">
 				file_download
@@ -695,7 +701,10 @@
 		</div>
 		<p class="count-product2">0</p>
 			<h6 class="descrip1"></h6>
-			<h2>TOTAL: <strong class="price-total2">0</strong> $</h2>
+			<h2 class="articulos">Artículos: <strong class="price-total2">0</strong> $</h2>
+			<h2 class="costoenvio">Envio: <strong class="envioc" id="enviosok">3.00</strong> $</h2>
+			<h2 >TOTAL: <strong class="price-total3">0</strong> $</h2>
+			
 		</div>
 	
 <br>
@@ -704,17 +713,18 @@
 
 		<div id="respuesta"></div>
 
-<div class="envio">	<p><span class="fa fa-motorcycle"></span >&nbsp;Delivery</p>
-		<p>Envíos a Quito x 3 Dolares</p>
-		<p>Envíos a Provincia x ServiEntrega </p>
-	</div>
-	
+		<div class="envio">	
+		
+			<div class="infoenvios" >
+				<a href="javascript:sidebar()"><p><span class="fa fa-truck"></span >&nbsp;&nbsp;<span class="fa fa-motorcycle">&nbsp;&nbsp;</span><span class="fa fa-exchange"></span></p></a> 
+			
+				
+			
+			</div>
 
 	  </form>
 
 	 
-       	
-
 </section>
 
 
@@ -746,7 +756,7 @@
 				arrow_back_ios
 				</span></a>
 
-				<a href="#" class="back2" id="card" ><span class="shopping_cart">
+				<a href="javascript:cotizar()" class="carito2" id="carito2" ><p class="count-product3">0</p><span class="shopping_cart">
 					shopping_cart
 					</span></a>
 

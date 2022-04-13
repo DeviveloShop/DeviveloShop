@@ -44,17 +44,34 @@ function catalogos() {
    
 }
 
+
+let enviosprecio = parseFloat(3.00) ;
+
 function cotizar() {
     document.getElementById("screen4").style.display = "block";
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-
+    priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
     conta=0;
-    contador=2;     
+    contador=2; 
+    if (countProduct ==0) {
+        enviosprecio = 0;
+        priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
+        
+    }else
+    {if  (countProduct ==1)
+        enviosprecio = 3.00;
+        priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
+       
+        
+    }
+       
+    
 }
 
+    
 //   boton atras
 
 function back() {
@@ -74,6 +91,7 @@ function back() {
         document.getElementById("screen4").style.display = "none";
         document.getElementById("products-id").style.display = "none";
         contador=1;
+        
 
     }}
 
@@ -86,6 +104,7 @@ function back() {
             document.getElementById("screen4").style.display = "none";
             document.getElementById("products-id").style.display = "none";
             contador=1;
+          
    
     
         }
@@ -130,7 +149,7 @@ document.querySelector('.tarjeta').addEventListener('click',()=>{
 
 
 // llevar arriba
-       
+     
 
 document.querySelector('.side')   
 .addEventListener('click',()=>{
@@ -140,6 +159,7 @@ document.querySelector('.side')
 });
 });
 
+
 document.querySelector('.back')   
 .addEventListener('click',()=>{
  window.scrollTo({
@@ -148,6 +168,7 @@ document.querySelector('.back')
 });
 });
   
+
 
 
         document.querySelector('.side1')   
@@ -166,6 +187,40 @@ document.querySelector('.back')
          behavior: 'smooth'
         });
         });
+
+// Scroll up
+
+document.getElementById("carito2").addEventListener("click", scrollUp);
+
+function scrollUp(){
+
+    var currentScroll = document.documentElement.scrollTop;
+
+    if (currentScroll > 0){
+        window.requestAnimationFrame(scrollUp);
+        window.scrollTo (0, currentScroll - (currentScroll / 10));
+    }
+}
+
+
+///
+
+buttonUp = document.getElementById("carito2");
+
+window.onscroll = function(){
+
+    var scroll = document.documentElement.scrollTop;
+
+    if (scroll > 500){
+        buttonUp.style.transform = "scale(1)";
+        document.getElementById("carito2").style.display = "block";
+    }else if(scroll < 500){
+        buttonUp.style.transform = "scale(0)";
+    }
+
+}
+
+
         
 //carritodecompras
      
@@ -177,7 +232,10 @@ let priceTotal = document.querySelector('.price-total')
 let amountProduct = document.querySelector('.count-product');
 
 let amountProduct2 = document.querySelector('.count-product2');
+let amountProduct3 = document.querySelector('.count-product3');
+
 let priceTotal2 = document.querySelector('.price-total2')
+let priceTotal3 = document.querySelector('.price-total3')
 let detalle = document.querySelector('.descrip1')
 let containerBuyCart2 = document.querySelector('.card-items2');
 let descrip = document.querySelector('.descrip1')
@@ -235,7 +293,9 @@ function deleteProduct(e) {
                 priceTotal.innerHTML = totalCard;
                 amountProduct.innerHTML = 0;
                 priceTotal2.innerHTML = totalCard;
+                priceTotal3.innerHTML = totalCard;
                 amountProduct2.innerHTML = "";
+                amountProduct3.innerHTML = "";
                
                 
                 
@@ -248,6 +308,11 @@ function deleteProduct(e) {
     loadHtml();
     loadHtml2();
 }
+
+
+let cantenv = 1;
+let cantenvio = 3;
+let cantenvioss = 0;
 
 function deleteProduct2(e) {
     if (e.target.classList.contains('delete-product2')) {
@@ -262,9 +327,21 @@ function deleteProduct2(e) {
                 amountProduct.innerHTML = 0;
                 priceTotal2.innerHTML = totalCard;
                 amountProduct2.innerHTML = "";
+                amountProduct3.innerHTML = "";
                 detalle.innerHTML = "";
-               
-                
+                cantenvio = parseFloat(cantenvio) - parseFloat(cantenv);
+                cantenvioss = cantenvio ;
+                if (countProduct ==2) {
+                    priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
+                    
+                }else
+                {if  (countProduct ==1)
+                    enviosprecio = 0;
+                    priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
+                    enviosprecio = 3.00;
+                    
+                }
+                   
                 
             }
         });
@@ -341,6 +418,7 @@ function loadHtml(){
         
 
         amountProduct.innerHTML = countProduct;
+        amountProduct3.innerHTML = countProduct;
     });
 }
 
