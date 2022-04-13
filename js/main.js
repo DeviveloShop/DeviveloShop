@@ -479,6 +479,7 @@ document.querySelector("#submit").addEventListener("click", e => {
     let fpagos = document.querySelector("#modulos").value;
     let detalle =document.querySelector('.card-items2').textContent;
     let resp = document.querySelector("#respuesta");
+    let totalpedido = parseFloat(totalCard) + parseFloat(enviosprecio);
     
   
     resp.classList.remove("fail");
@@ -493,8 +494,12 @@ document.querySelector("#submit").addEventListener("click", e => {
           ${contacto}%0A
           *Detalles del Pedido*%0A
           ${detalle}%0A
-          *Total a Pagar*%0A
+          *articulos*%0A
           ${totalCard}%0A
+          *Envio*%0A
+          ${enviosprecio}.00%0A
+          *Total a Pagar*%0A
+          ${totalpedido}%0A
           *Forma de Pago*%0A
           ${fpagos}%0A`;
   
