@@ -769,11 +769,9 @@ footer .rango {
     justify-content: space-between;
     margin: auto;
     align-items: center;
-    position: relative;
+
 }
-.header-section div{
-    position: relative;
-}
+
 .header-section p{
     position: absolute;
     top: -24px;
