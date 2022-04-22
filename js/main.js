@@ -301,9 +301,21 @@ function deleteProduct(e) {
                 
             }
         });
-        buyThings = buyThings.filter(product => product.id !== deleteId);
-        
-        countProduct--;
+
+  buyThings.forEach(value => {
+            if (value.id == deleteId) {
+                countProduct = (countProduct)-(value.amount);
+                amountProduct.innerHTML = 0;
+                buyThings = buyThings.filter(product => product.id !== deleteId);
+      
+           
+             
+               
+                
+                
+            }
+        });
+       
     }
     loadHtml();
     loadHtml2();
@@ -345,9 +357,20 @@ function deleteProduct2(e) {
                 
             }
         });
-        buyThings = buyThings.filter(product => product.id !== deleteId);
-        
-        countProduct--;
+        buyThings.forEach(value => {
+            if (value.id == deleteId) {
+                countProduct = (countProduct)-(value.amount);
+                amountProduct.innerHTML = 0;
+                buyThings = buyThings.filter(product => product.id !== deleteId);
+      
+           
+             
+               
+                
+                
+            }
+        });
+       
     }
     loadHtml();
     loadHtml2();
@@ -373,6 +396,7 @@ function readTheContent(product){
         const pro = buyThings.map(product => {
             if (product.id === infoProduct.id) {
                 product.amount++;
+                countProduct++;
                 return product;
             } else {
                 return product;
