@@ -457,7 +457,7 @@ function loadHtml2(){
         row.innerHTML = `
             <img src="${image}" alt="">
             <div class="item-content2">
-                <h5>${title}</h5>
+                <h5>&nbsp;&nbsp;${title}</h5>
                 <h5>${talla}</h5>
                 <h5 class="cart-price2">Precio ${price}$</h5>
                 <h6>Cantidad: ${amount}</h6>
