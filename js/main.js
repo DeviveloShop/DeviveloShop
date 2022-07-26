@@ -1,14 +1,76 @@
 
+let pages = '';
+
+function ids1 () {
+    ids = 'servicios.html';
+    history.pushState(`Selected: ${ids}`, `./${ids}`);
+    pages = 'servicios.html.html';
+
+};
+
+function ids2 () {
+    ids = 'carrito.html';
+    history.pushState(`Selected: ${ids}`, `./${ids}`);
+    pages = 'carrito.html';
+
+};
+
+
+
+window.addEventListener('popstate', e => {
+    backweb();
+    
+});
+
+
+let urlclick =`https://devivelo.blogspot.com`; 
+
+function backweb() {
+   
+    if (contador==1) {
+        document.getElementById("informacion").style.display = "block";
+        document.getElementById("portafolio").style.display = "none";
+        document.getElementById("side").style.display = "none";
+        document.getElementById("screen4").style.display = "none";
+        conta=0;
+        contador=0;
+        history.back();
+    }
+    else if(contador==2){
+        document.getElementById("portafolio").style.display = "block";
+        document.getElementById("screen4").style.display = "none";
+        document.getElementById("products-id").style.display = "none";
+        document.getElementById("sharelink").style.display = "none";
+        contador=1;
+        ids1(); 
+        
+
+    }
+    else{
+        history.back();
+        
+    }
+
+    } 
+
 function inicio() {
     document.getElementById("informacion").style.display = "block";	
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("back").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
+    document.getElementById("sharelink").style.display = "none";
+    backarriba(); 
     conta=0;
     contador=0;
+    backweb();
 }
 
+function backarriba(){
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });       
+};
 
 
 
@@ -22,27 +84,25 @@ function servicios() {
 if (contador==0) {
     document.getElementById("informacion").style.display = "none";
     document.getElementById("portafolio").style.display = "block";
-    document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
+    document.getElementById("sharelink").style.display = "none";
     conta=0;
     contador=1;
+    ids1(); 
 }
 else{
-
-}
-}
-
-function catalogos() {
     document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "block";
-    document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
+    document.getElementById("sharelink").style.display = "none";
     conta=0;
-    contador=1;
-   
+    contador=0;
+    ids1(); 
 }
+}
+
 
 
 let enviosprecio = parseFloat(3.00) ;
@@ -52,7 +112,9 @@ function cotizar() {
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
+    document.getElementById("sharelink").style.display = "none";
+    backarriba();
+    ids2(); 
     priceTotal3.innerHTML = parseFloat(totalCard) + parseFloat(enviosprecio);
     conta=0;
     contador=2; 
@@ -71,6 +133,17 @@ function cotizar() {
     
 }
 
+function sharetj(){
+    document.getElementById("informacion").style.display = "none";
+    document.getElementById("portafolio").style.display = "none";
+    document.getElementById("side").style.display = "none";
+    document.getElementById("sharelink").style.display = "block";
+    document.getElementById("screen4").style.display = "none";
+    conta=0;
+    contador=2; 
+    backarriba();
+    ids2(); 
+}
     
 //   boton atras
 
@@ -79,18 +152,19 @@ function back() {
     if (contador==1) {
         document.getElementById("informacion").style.display = "block";
         document.getElementById("portafolio").style.display = "none";
-        document.getElementById("back").style.display = "none";
         document.getElementById("side").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         conta=0;
         contador=0;
-
+        history.back();
     }
-    else{
+    else if(contador==2){
         document.getElementById("portafolio").style.display = "block";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("products-id").style.display = "none";
+        document.getElementById("sharelink").style.display = "none";
         contador=1;
+        ids1(); 
         
 
     }}
@@ -188,39 +262,6 @@ document.querySelector('.back')
         });
         });
 
-// Scroll up
-
-document.getElementById("carito2").addEventListener("click", scrollUp);
-
-function scrollUp(){
-
-    var currentScroll = document.documentElement.scrollTop;
-
-    if (currentScroll > 0){
-        window.requestAnimationFrame(scrollUp);
-        window.scrollTo (0, currentScroll - (currentScroll / 10));
-    }
-}
-
-
-///
-
-buttonUp = document.getElementById("carito2");
-
-window.onscroll = function(){
-
-    var scroll = document.documentElement.scrollTop;
-
-    if (scroll > 500){
-        buttonUp.style.transform = "scale(1)";
-        document.getElementById("carito2").style.display = "block";
-    }else if(scroll < 500){
-        buttonUp.style.transform = "scale(0)";
-    }
-
-}
-
-
         
 //carritodecompras
      
@@ -277,7 +318,8 @@ function addProduct(e){
     e.preventDefault();
     if (e.target.classList.contains('btn-add-cart')) {
         const selectProduct = e.target.parentElement; 
-        readTheContent(selectProduct);     
+        readTheContent(selectProduct); 
+        addz();    
     }
 }
 
@@ -541,11 +583,114 @@ document.querySelector("#submit").addEventListener("click", e => {
     
     
     
-    
+  
+      //ALERTAS>
+      function save(){
+        let url = `https://drive.google.com/u/0/uc?id=1J6QHf4QbXvCWtJkpBX0e56cBhdq0yRSC&export=download`;
+        window.open(url); 
+       };
+      
+      function ftuser() {
+          Swal.fire({
+              title: 'Calzado Exclusivo',
+              imageUrl: 'img/LOGODEVI.png',
+              imageWidth: 200,
+              confirmButtonText: 'Añadir a Contactos',
+              showCloseButton: 'true',
+              showCancelButton: true,
+        
+          
+            }).then((result) => {
+              if (result.isConfirmed) {
+                save();
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Descarga Correcta',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            })
+      
+       
+      };
+      
+      function abrirpagos(){
+        let urla = `https://devivelo.blogspot.com/p/opciones-de-pago.html`;
+        window.open(urla); 
+       };
+
+
+       function verpagos(){
+        let urlsp = `https://devivelo.blogspot.com/p/opciones-de-pago.html`;
+        window.open(urlsp); 
+       };
+
+
+      function msjpagos() {
+        Swal.fire({
+            title: 'Opciones de Pago',
+            icon: 'success',
+            html:
+           '<a href="https://api.whatsapp.com//send?text=Enviado%20desde%20la%20App%20de%20Cliconline%20Ver%20Opciones%20de%20Pago%20https://devivelo.blogspot.com/p/opciones-de-pago.html" class="botonp" ><span class="fa fa-share-alt"></span >&nbsp;Compartir nro. Cuenta</a>',
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ver nro. Cuenta',
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              verpagos();
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Información ',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }
+          })
+      
+       
+      };
+      
+      function msj2() {
+        Swal.fire({
+        showCloseButton: true,
+        icon: 'success',
+        title: 'Tarjeta Digital',
+        text: 'Link Copiado a Portapapeles',
+        footer: 'Devivelo Shop'
+        });
+      
+       
+      };  
       
 
+      function addz() {
+        Swal.fire({
+        icon: 'success',
+        title: 'Producto',
+        text: 'Agregado al Carrito',
+        showConfirmButton: false,
+        timer: 1000,
+        footer: 'Devivelo Shop',
+        });
+      
+       
+      };  
+
         
-        
+      const $content = document.getElementById('textareacopy');
+      $btncopy = document.getElementById ('btcopi');
+      $title = document.getElementById ('titlelink')
+
+      $btncopy.addEventListener('click', e => {
+        $content.select();
+        document.execCommand('copy')
+        msj2();
+      }); 
 
 
 

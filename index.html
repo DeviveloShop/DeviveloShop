@@ -24,7 +24,7 @@
 	
 <a href="javascript:inicio()">Inicio</a>
 		
-<a class="side1" href="javascript:catalogos()">Catálogos</a>
+<a class="side1" href="javascript:servicios()">Catálogos</a>
 
 <a class="side1" href="javascript:cotizar()">Carrito</a>
 
@@ -55,17 +55,6 @@
 		
 			<img class="portada" src="img/b11-01.png" alt="">
 
-			<a href="https://api.whatsapp.com//send?text=Enviado%20desde%20la%20App%20de%20Cliconline%20Ver%20Tarjeta%20Digital%20aqui%20https://devivelo.blogspot.com" class="share" id="share" target="black" ><span class="material-icons">share</span></a>
-
-			<a href="https://drive.google.com/u/0/uc?id=1J6QHf4QbXvCWtJkpBX0e56cBhdq0yRSC&export=download" class="descarga" id="descarga" target="black" ><span class="material-icons">
-				file_download
-				</span></a>	
-
-			<a href="https://devivelo.blogspot.com/p/opciones-de-pago.html" class="pago" id="pago" target="black" ><span class="materialpago">
-					paid
-					</span></a>	
-
-					
 		 </div>
 	 <br>
 	 <!-- incio informacion -->
@@ -76,7 +65,7 @@
 			<h2 class="titulo">DEVIVELO</h2>
 			<br>
 			 <section class="bt">
-			 <a href="javascript:servicios()" class="boton" id="inicio" ><span class="fa fa-home"></span >&nbsp;Inicio</a>
+			 <a href="javascript:servicios()" class="boton" id="inicio" ><span class="fa fa-chevron-circle-right"></span >&nbsp;Catálogo</a>
 				<br><br>
 				<h5 class="subtitulo">Calzado Exclusivo</h5>
 			</section>
@@ -581,7 +570,24 @@
 
 		 </section>
 		
+<!-- screen compartir  -->
 
+<section class="sharelink" id="sharelink">
+	<h1><span class="fa fa-share-alt-square"></span > COMPARTIR TARJETA</h1>
+	<br>
+		<a href="https://api.whatsapp.com//send?text=Enviado%20desde%20la%20App%20de%20Cliconline%20Ver%20Tarjeta%20Digital%20DEVIVELO%20https://devivelo.blogspot.com"  
+		class="sharew"><span class="fa fa-whatsapp"></span >&nbsp;WhatsApp&nbsp;</a>
+			<a href="sms:?&body=Tarjeta%3A+Digital+Cliconline+-+https://devivelo.blogspot.com" class="sharem"><span class="fa fa-comments"></span >&nbsp;Mensaje</a>
+		<h5  id="titlelink">Link Tarjeta Digital</h5>
+	<div class="copy-text">
+	<textarea name="" id="textareacopy" cols="1" rows="1" class="textareacopy">https://devivelo.blogspot.com</textarea>
+	<h6><span class="fa fa-credit-card"></span >&nbsp;https://devivelo.blogspot.com&nbsp;&nbsp;</h6>
+	<button id="btcopi">
+		<i class="fa fa-clone" aria-hidden="true"></i>
+	</button>
+	</div>
+	</section>
+	
 
 <!-- screen 4  -->
 
@@ -626,10 +632,10 @@
 		  </select>
         
 		<div>
-			<h5 class="descriptitulo" id="descriptitulo">Ver Detalles del Pedido</h5>
+			<h5 class="descriptitulo" id="descriptitulo">Ver Detalles del Pedido&nbsp&nbsp;<span class="fa fa-mouse-pointer"></span></h5>
 			
 			<div class="cart-products2" id="products-id2">
-				<p class="close-btn" onclick="closeBtn2()">Ocultar</p>
+				<p class="close-btn" onclick="closeBtn2()"><span class="fa fa-eye-slash"></span>&nbsp;Ocultar</p>
 				<h3>Mi carrito</h3>
 				<div class="card-items2">
 		
@@ -690,21 +696,45 @@
 	 </section>
 	
  </div>
-
+ <br><br><br>
          <a href="javascript:back()" class="back" id="back" ><span class="material-back">
 				arrow_back_ios
 				</span></a>
 
-				<a href="javascript:cotizar()" class="carito2" id="carito2" ><p class="count-product3">0</p><span class="shopping_cart">
-					shopping_cart
-					</span></a>
-
-	
+					<section class="navi">
+						<ul>
+							<li >
+								<div class="shoping"><p class="count-product3">0</p>
+									<a href="javascript:cotizar()"><span class="iconshop" id="icon1"><span class="fa fa-shopping-cart"></span ></span>
+								<span class="title"></span>
+							</a>
+							</div>
+								
+							</li>
+							<li>
+								<a href="javascript:msjpagos()"><span class="icon" id="icon2"><span class="fa fa-usd"></span ></span>
+								<span class="title"></span></a>
+							</li>
+							<li>
+								<a href="javascript:inicio()" class="icon" id="icon3"><span class="icon" id="icon3y3"><span class="fa fa-home"></span ></span>
+								<span class="title"></span></a>
+							</li>
+							<li>
+								<a href="javascript:ftuser()"><span class="icon" id="icon4"><span class="fa fa-user"></span ></span>
+								<span class="title"></span></a>
+							</li>
+							<li>
+								<a href="javascript:sharetj()"><span class="icon5" id="icon5"><span class="fa fa-share-alt"></span ></span>
+								<span class="title"></span></a>
+							</li>
+						</ul>
+					</section>
 			
      </body>
 
 
 	<script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
