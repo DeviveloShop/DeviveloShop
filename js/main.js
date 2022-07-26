@@ -1,5 +1,5 @@
 
-let pages = '';
+let ids = '';
 
 function ids1 () {
     ids = 'servicios.html';
